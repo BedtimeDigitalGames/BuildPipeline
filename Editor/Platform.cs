@@ -42,6 +42,8 @@ namespace BedtimeCore.NestBuilder
 					return BuildTargetGroup.tvOS;
 				case BuildTarget.Switch:
 					return BuildTargetGroup.Switch;
+                case BuildTarget.Switch2:
+                    return BuildTargetGroup.Switch2;
 				case BuildTarget.GameCoreXboxOne:
 					return BuildTargetGroup.GameCoreXboxOne;
 				case BuildTarget.GameCoreXboxSeries:
