@@ -108,6 +108,19 @@ namespace BedtimeCore.NestBuilder
 			{
 				var container = configuration.FindProperty("buildSettings");
 				var prop = container.FindPropertyRelative(Name);
+				
+				if(prop == null)
+				{
+					foreach (SerializedProperty o in container)
+					{
+						prop = o.FindPropertyRelative(Name);
+						if(prop != null)
+						{
+							break;
+						}
+					}
+				}
+
 				return prop.FindPropertyRelative(nameof(value)).Copy();
 			}
 			catch (Exception)
