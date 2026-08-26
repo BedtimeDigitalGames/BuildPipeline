@@ -31,7 +31,14 @@ namespace BedtimeCore.NestBuilder
 			Selection.selectionChanged += RepaintAll;
 		}
 
-        private void OnFocus() => inspector.OnFocus();
+        private void OnFocus()
+        {
+	        if (inspector == null)
+	        {
+		        return;
+	        }
+	        inspector.OnFocus();
+        }
 
         private void Update()
 		{
